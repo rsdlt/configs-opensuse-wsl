@@ -1,0 +1,4 @@
+
+[character] 
+success_symbol = '[#](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+

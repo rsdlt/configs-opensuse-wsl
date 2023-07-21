@@ -1,0 +1,8 @@
+[user]
+	name = Rodrigo Santiago
+	email = rsdlt@pm.me
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+  excludesfile = ~/.gitignore
