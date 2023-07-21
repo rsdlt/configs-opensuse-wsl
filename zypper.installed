@@ -1,0 +1,76 @@
+i+ | aaa_base-extras                            | SUSE Linux Base Package (recommended part)                                | package
+i+ | aaa_base-wsl                               | SUSE Linux Base Package (Windows Subsystem for Linux)                     | package
+i+ | bat                                        | A cat(1) clone with syntax highlighting and Git integration               | package
+i+ | bottom                                     | Yet another graphical process/system monitor                              | package
+i+ | bzip2                                      | A Program for Compressing Files                                           | package
+i+ | ca-certificates                            | Utilities for system wide CA certificate installation                     | package
+i+ | ca-certificates-mozilla                    | CA certificates for OpenSSL                                               | package
+i+ | clang                                      | CLANG frontend for LLVM                                                   | package
+i+ | cmake                                      | Cross-platform make system                                                | package
+i+ | deno                                       | A secure JavaScript and TypeScript runtime                                | package
+i+ | devel_basis                                | Base Development                                                          | pattern
+i+ | devel_C_C++                                | C/C++ Development                                                         | pattern
+i+ | devel_ruby                                 | Ruby Development                                                          | pattern
+i+ | dos2unix                                   | Text converters to and from DOS/MAC to UNIX                               | package
+i+ | fd                                         | An alternative to the "find" utility                                      | package
+i+ | filesystem                                 | Basic Directory Layout                                                    | package
+i+ | fish                                       | The "friendly interactive shell"                                          | package
+i+ | gdb                                        | A GNU source-level debugger for C, C++, Fortran and other languages       | package
+i+ | git                                        | Fast, scalable, distributed revision control system                       | package
+i+ | gitui                                      | Terminal UI for git                                                       | package
+i+ | glibc                                      | Standard Shared Libraries (from the GNU C Library)                        | package
+i+ | iputils                                    | IPv4 and IPv6 Networking Utilities                                        | package
+i+ | joe                                        | A Text Editor                                                             | package
+i+ | just                                       | Commmand runner                                                           | package
+i+ | less                                       | Text File Browser and Pager Similar to more                               | package
+i+ | libopenssl-devel                           | Include Files and Libraries mandatory for Development                     | package
+i+ | libpq5                                     | Shared Libraries Required for PostgreSQL Clients                          | package
+i+ | libyui-ncurses-pkg16                       | Libyui - yast2 package selector widget for the NCurses UI                 | package
+i+ | lld                                        | Linker for Clang/LLVM                                                     | package
+i+ | lsof                                       | A Program That Lists Information about Files Opened by Processes          | package
+i+ | man                                        | A Program for Displaying man Pages                                        | package
+i+ | neofetch                                   | CLI system information tool written in BASH                               | package
+i+ | neovim                                     | Vim-fork focused on extensibility and agility                             | package
+i+ | netcat-openbsd                             | TCP/IP swiss army knife                                                   | package
+i+ | npm20                                      | Package manager for Node.js                                               | package
+i+ | openssh                                    | Secure Shell Client and Server (Remote Login Program)                     | package
+i+ | openssl                                    | Secure Sockets and Transport Layer Security                               | package
+i+ | openSUSE                                   | openSUSE Tumbleweed                                                       | product
+i+ | openSUSE-build-key                         | The public gpg keys for rpm package signature verification                | package
+i+ | openSUSE-release                           | openSUSE Tumbleweed                                                       | package
+i+ | openSUSE-release-appliance-wsl             | openSUSE Tumbleweed                                                       | package
+i+ | pam-config                                 | Utility to modify common PAM configuration files                          | package
+i+ | patterns-base-minimal_base                 | Minimal Appliance Base                                                    | package
+i+ | patterns-devel-base-devel_basis            | Base Development                                                          | package
+i+ | patterns-devel-C-C++-devel_C_C++           | C/C++ Development                                                         | package
+i+ | patterns-devel-ruby-devel_ruby             | Ruby Development                                                          | package
+i+ | postgresql                                 | Basic Clients and Utilities for PostgreSQL                                | package
+i+ | postgresql-contrib                         | Contributed Extensions and Additions to PostgreSQL                        | package
+i+ | postgresql-server                          | The Programs Needed to Create and Run a PostgreSQL Server                 | package
+i+ | postgresql15                               | Basic Clients and Utilities for PostgreSQL                                | package
+i+ | postgresql15-contrib                       | Contributed Extensions and Additions to PostgreSQL                        | package
+i+ | postgresql15-server                        | The Programs Needed to Create and Run a PostgreSQL Server                 | package
+i+ | redis                                      | Persistent key-value database                                             | package
+i+ | ripgrep                                    | A search tool that combines ag with grep                                  | package
+i+ | rpm                                        | The RPM Package Manager                                                   | package
+i+ | ruby-devel                                 | Development files to link against Ruby                                    | package
+i+ | scout-command-not-found                    | Command Not Found extension for shell                                     | package
+i+ | screen                                     | A program to allow multiple screens on a VT100/ANSI Terminal              | package
+i+ | sqlite3                                    | Embeddable SQL Database Engine                                            | package
+i+ | starship                                   | A customizable prompt for many shells                                     | package
+i+ | sudo                                       | Execute some commands as root                                             | package
+i+ | system-user-nobody                         | System user and group nobody                                              | package
+i+ | timezone                                   | Time Zone Descriptions                                                    | package
+i+ | tmux                                       | Terminal multiplexer                                                      | package
+i+ | traceroute                                 | Packet route path tracing utility                                         | package
+i+ | tree                                       | File listing as a tree                                                    | package
+i+ | vim                                        | Vi IMproved                                                               | package
+i+ | wget                                       | A Tool for Mirroring FTP and HTTP Servers                                 | package
+i+ | yarn                                       | 📦🐈 Fast, reliable, and secure dependency management                     | package
+i+ | yast2-firstboot                            | YaST2 - Initial System Configuration                                      | package
+i+ | yast2-firstboot-wsl                        | YaST2 firstboot settings for WSL images                                   | package
+i+ | yast2-packager                             | YaST2 - Package Library                                                   | package
+i+ | zig                                        | Compiler for the Zig language                                             | package
+i+ | zip                                        | File compression program                                                  | package
+i+ | zstd                                       | Zstandard compression tools                                               | package
+i+ | zypper                                     | Command line software manager using libzypp                               | package
