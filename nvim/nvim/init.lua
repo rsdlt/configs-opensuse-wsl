@@ -40,6 +40,28 @@ require 'hop'.setup {
   jump_on_sole_occurrence = false,
 }
 
+-- Oil
+require('oil').setup({
+  columns = {
+    "icon",
+    -- "permissions",
+    "size",
+    "mtime",
+  },
+  view_options = {
+    -- Show files and directories that start with "."
+    show_hidden = true,
+    -- This function defines what is considered a "hidden" file
+    is_hidden_file = function(name, bufnr)
+      return vim.startswith(name, ".")
+    end,
+    -- This function defines what will never be shown, even when `show_hidden` is set
+    is_always_hidden = function(name, bufnr)
+      return false
+    end,
+  },
+})
+
 -- Global Configuration
 local global = vim.g
 local o = vim.o
@@ -178,11 +200,11 @@ vim.diagnostic.config({
 -- Show autodiagnostic popup on cursor hover_range
 -- Goto previous / next diagnostic warning / error
 -- Show inlay_hints more frequently
-vim.o.updatetime = 450
-vim.opt.signcolumn = 'yes'
-vim.cmd([[
-autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
-]])
+-- vim.o.updatetime = 550
+-- vim.opt.signcolumn = 'yes'
+-- vim.cmd([[
+-- autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
+-- ]])
 
 
 
@@ -392,7 +414,9 @@ require('telescope').setup {
       "^./target/",
       "LICENSE*",
       "Cargo.lock",
-      "yarn.lock"
+      "yarn.lock",
+      "target",
+      "git"
     }
   }
 }
@@ -461,9 +485,9 @@ map("n", "<leader>e", ":NvimTreeToggle<CR>")
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', 'me', vim.diagnostic.goto_prev)
 vim.keymap.set('n', 'mE', vim.diagnostic.goto_next)
--- vim.keymap.set('n', '<leader>i', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>i', vim.diagnostic.open_float)
 -- vim.keymap.set('n', 'I', vim.diagnostic.setloclist)
-vim.keymap.set('n', 'I', ':TroubleToggle<cr>')
+vim.keymap.set('n', '<leader>t', ':TroubleToggle<cr>')
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
@@ -478,7 +502,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local opts = { buffer = ev.buf }
     vim.keymap.set('n', 'mD', vim.lsp.buf.declaration, opts)
     vim.keymap.set('n', 'md', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'D', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<leader>d', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'mi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     vim.keymap.set('n', '<leader>fa', vim.lsp.buf.add_workspace_folder, opts)
@@ -526,6 +550,10 @@ vim.keymap.set('x', 'cb', '<Plug>(comment_toggle_blockwise_visual)')
 
 -- Hop
 map('n', 'mj', ":HopWord<cr>")
+
+-- Oil
+-- vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })
+vim.keymap.set("n", "-", require("oil").open_float, { desc = "Open parent directory" })
 
 
 -- Fix common typos

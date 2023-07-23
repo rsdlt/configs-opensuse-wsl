@@ -1,4 +1,7 @@
 return require('packer').startup(function()
+  -- Oil
+  use 'stevearc/oil.nvim'
+
   -- Trouble
   use 'folke/trouble.nvim'
 
