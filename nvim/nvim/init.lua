@@ -14,7 +14,7 @@ vim.cmd([[
 set clipboard+=unnamedplus
 ]])
 
--- turn off macro reording
+-- turn off macro recording
 vim.cmd([[
 map q <Nop>
 ]])
@@ -25,7 +25,7 @@ vim.loader.enable()
 -- Imports
 require('plugins') -- Plugins
 
--- Autosave
+-- Format on Autosave
 vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 -- Neoscroll
@@ -115,7 +115,8 @@ require("monokai-pro").setup({
     tag_attribute = { italic = false },
   },
   background_clear = {
-    "telescope"
+    "telescope",
+    "lualine"
   },
 })
 vim.cmd([[colorscheme monokai-pro]])
@@ -125,7 +126,8 @@ require('lualine').setup {
   options = {
     theme = 'monokai-pro',
     fmt = string.lower,
-    component_separators = { left = '', right = '' },
+    -- component_separators = { left = '', right = '' },
+    component_separators = { left = '-', right = '-' },
     section_separators = { left = '', right = '' },
   },
 }
@@ -165,7 +167,7 @@ require('Comment').setup({
 --    LSP Servers Configurations
 ---------------------------------------------------------------------
 
--- LSP Support
+-- Mason
 require("mason").setup()
 require("mason-lspconfig").setup()
 
@@ -206,9 +208,33 @@ vim.diagnostic.config({
 -- autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 -- ]])
 
+-- Deno and TS
+local nvim_lsp = require("lspconfig");
+nvim_lsp.denols.setup {
+  on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+}
 
+nvim_lsp.tsserver.setup {
+  on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern("package.json"),
+  single_file_support = false,
+}
 
+-- Deno
+-- require("lspconfig").denols.setup {
+--   root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc")
+-- }
 
+-- TypeScript
+-- require("lspconfig").tsserver.setup {
+--   on_attach = on_attach,
+--   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+--   cmd = { "typescript-language-server", "--stdio" },
+--   root_dir = nvim_lsp.util.root_pattern("package.json")
+-- }
+
+-- Resolve Deno & Typescript LSP conflict
 
 -- HTML
 require("lspconfig").html.setup {
@@ -221,12 +247,6 @@ require("lspconfig").html.setup {
 require 'lspconfig'.svelte.setup {}
 
 
--- TypeScript
-require("lspconfig").tsserver.setup {
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  cmd = { "typescript-language-server", "--stdio" }
-}
 
 -- Lua
 require 'lspconfig'.lua_ls.setup {

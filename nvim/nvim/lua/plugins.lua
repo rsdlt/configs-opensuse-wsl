@@ -1,4 +1,7 @@
 return require('packer').startup(function()
+  -- Git
+  use "tpope/vim-fugitive"
+
   -- Oil
   use 'stevearc/oil.nvim'
 
