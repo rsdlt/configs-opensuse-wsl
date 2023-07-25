@@ -15,6 +15,8 @@ i+ | dos2unix                                   | Text converters to and from DO
 i+ | fd                                         | An alternative to the "find" utility                                      | package
 i+ | filesystem                                 | Basic Directory Layout                                                    | package
 i+ | fish                                       | The "friendly interactive shell"                                          | package
+i+ | fzf                                        | A command-line fuzzy finder                                               | package
+i+ | fzf-tmux                                   | Tmux integration for fzf                                                  | package
 i+ | gdb                                        | A GNU source-level debugger for C, C++, Fortran and other languages       | package
 i+ | git                                        | Fast, scalable, distributed revision control system                       | package
 i+ | gitui                                      | Terminal UI for git                                                       | package
