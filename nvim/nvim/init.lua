@@ -94,7 +94,7 @@ o.cursorline = true        -- display cursor line
 o.cursorlineopt = 'number' --
 o.background = "dark"      -- dark themes
 o.termguicolors = false
-
+o.colorcolumn = "100"
 
 -- Map <leader>
 global.mapleader = ","
@@ -208,33 +208,19 @@ vim.diagnostic.config({
 -- autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
 -- ]])
 
--- Deno and TS
-local nvim_lsp = require("lspconfig");
-nvim_lsp.denols.setup {
-  on_attach = on_attach,
-  root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
-}
-
-nvim_lsp.tsserver.setup {
-  on_attach = on_attach,
-  root_dir = nvim_lsp.util.root_pattern("package.json"),
-  single_file_support = false,
-}
-
 -- Deno
--- require("lspconfig").denols.setup {
---   root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc")
--- }
-
--- TypeScript
--- require("lspconfig").tsserver.setup {
+-- local nvim_lsp = require("lspconfig");
+-- nvim_lsp.denols.setup {
 --   on_attach = on_attach,
---   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
---   cmd = { "typescript-language-server", "--stdio" },
---   root_dir = nvim_lsp.util.root_pattern("package.json")
+--   root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
 -- }
 
--- Resolve Deno & Typescript LSP conflict
+-- Typescript
+require("lspconfig").tsserver.setup {
+  on_attach = on_attach,
+  -- root_dir = nvim_lsp.util.root_pattern("package.json"),
+  -- single_file_support = false,
+}
 
 -- HTML
 require("lspconfig").html.setup {
@@ -245,8 +231,6 @@ require("lspconfig").html.setup {
 
 -- Svelte
 require 'lspconfig'.svelte.setup {}
-
-
 
 -- Lua
 require 'lspconfig'.lua_ls.setup {
