@@ -1,9 +1,9 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     if not set -q TMUX
-        set -g TMUX tmux new-session -d -s base -c "$HOME/"
+        set -g TMUX tmux new-session -d -s s -c "$HOME/"
         eval $TMUX
-        tmux attach-session -d -t base
+        tmux attach-session -d -t s
     end
 end
 
